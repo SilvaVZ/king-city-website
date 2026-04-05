@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>King City — Divisions in Music & Publishing</title>
+  <meta property="og:title" content="King City">
+  <meta property="og:description" content="Building divisions in music and publishing. Artist-focused. Long-term vision.">
+  <meta property="og:image" content="https://kngcity.com/King-City-Sticker-Logo.png">
+  <meta property="og:url" content="https://kngcity.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://kngcity.com/King-City-Sticker-Logo.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #f0f0f0;
+    }
+
+    /* Navigation */
+    nav {
+      background: #fff;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #e0e0e0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #000;
+      letter-spacing: -0.5px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #b24ba8;
+    }
+
+    .logo {
+      pointer-events: none;
+      cursor: default;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      color: #fff;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .hero .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: 2px solid #fff;
+    }
+
+    .cta-button:hover {
+      background: transparent;
+      color: #fff;
+      border-color: #b24ba8;
+    }
+
+    /* Divisions Section */
+    .divisions {
+      padding: 4rem 2rem;
+      background: #fff;
+    }
+
+    .divisions .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .section-subheading {
+      text-align: center;
+      color: #666;
+      margin-bottom: 3rem;
+      font-size: 1.05rem;
+    }
+
+    .divisions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+    }
+
+    .division-card {
+      background: #fafafa;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .division-card:hover {
+      border-color: #b24ba8;
+      box-shadow: 0 8px 24px rgba(178, 75, 168, 0.12);
+    }
+
+    .division-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .division-card .status {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+    }
+
+    .status.active {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .status.upcoming {
+      background: #fff3e0;
+      color: #e65100;
+    }
+
+    .division-card p {
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .division-link {
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #b24ba8;
+      transition: all 0.2s;
+    }
+
+    .division-link:hover {
+      border-bottom-color: #d4af37;
+      color: #b24ba8;
+    }
+
+    /* About Section */
+    .about {
+      padding: 4rem 2rem;
+      background: #f0f0f0;
+    }
+
+    .about .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+
+    .about p {
+      color: #333;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #666;
+      transition: border-color 0.2s;
+    }
+
+    footer a:hover {
+      border-bottom-color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav .container {
+        padding: 1rem 2rem;
+      }
+
+      .logo img {
+        height: 70px !important;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+
+      .divisions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo"><img src="King-City-Sticker-Logo.png" alt="King City" style="height: 100px; width: auto; display: block;"></a>
+      <ul>
+        <li><a href="#divisions">Divisions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>King City</h1>
+      <p>Building divisions in music and publishing. Artist-focused. Long-term vision.</p>
+      <a href="#divisions" class="cta-button">Explore</a>
+    </div>
+  </section>
+
+  <section id="divisions" class="divisions">
+    <div class="container">
+      <h2 class="section-heading">Our Divisions</h2>
+      <p class="section-subheading">Focused initiatives. Real ownership. Professional infrastructure.</p>
+      
+      <div class="divisions-grid">
+        <div class="division-card">
+          <span class="status active">Active</span>
+          <h3>King City Music</h3>
+          <p>Independent record label. Roster-based artist development and distribution. Focused on clean metadata, proper splits, and artist long-term growth.</p>
+          <a href="https://kngcitymusic.com" class="division-link">Visit Label →</a>
+        </div>
+
+        <div class="division-card">
+          <span class="status upcoming">Coming Soon</span>
+          <h3>King City Publishing</h3>
+          <p>Publishing administration and songwriter development. When launched, will manage composition rights, publishing income, and songwriting partnerships for King City roster and select external writers.</p>
+          <span class="division-link" style="border-bottom: 2px solid #ccc; color: #999; cursor: default;">In Development</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <h2>About King City</h2>
+      <p>King City was founded to build sustainable music infrastructure. We focus on doing things correctly—proper contracts, clean splits, accurate metadata, and artist support that lasts beyond the first release.</p>
+      <p>Each division operates independently but shares the same commitment: transparency, professionalism, and long-term artist relationships.</p>
+      <p>We're building for the future, one artist at a time.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> King City. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
